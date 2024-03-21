@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function obtenerEmpresasAsociadas() {
         var rut = document.getElementById('rut').value;
         // URL del archivo CSV en tu repositorio de GitHub
-        var csvUrl = 'https://raw.githubusercontent.com/tu-usuario/tu-repositorio/main/tu-archivo.csv';
+        var csvUrl = 'https://raw.githubusercontent.com/PaulaaCoronado/Solicitud-mermas/main/Clientes.csv?token=GHSAT0AAAAAACP5M4GERAQ4E4VTF264MDM6ZP4LYCA';
 
         // Realizar una solicitud HTTP GET al archivo CSV
         fetch(csvUrl)
