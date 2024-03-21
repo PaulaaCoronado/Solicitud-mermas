@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 for (var i = 0; i < lineas.length; i++) {
                     var campos = lineas[i].split(',');
                     if (campos[0] === rut) {
-                        empresasAsociadas.push(campos[0]); // Agregar la empresa asociada al Rut a la lista
+                        empresasAsociadas.push(campos[1]); // Agregar la empresa asociada al Rut a la lista
                     }
                 }
 
