@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form id="formulario">
+        <label for="rut">Rut:</label>
+        <input type="text" id="rut" name="rut" required><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <select id="nombre" name="nombre" required>
+            <!-- Opciones de nombres asociados al Rut se agregarán aquí dinámicamente con JavaScript -->
+        </select><br><br>
+
+        <label for="factura">Número de Factura:</label>
+        <input type="text" id="factura" name="factura" required><br><br>
+
+        <label for="peso">Peso:</label>
+        <input type="number" id="peso" name="peso" required><br><br>
+
+        <label for="imagen">Cargar Imagen:</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
