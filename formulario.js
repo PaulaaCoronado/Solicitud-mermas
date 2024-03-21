@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 } else {
                     var option = document.createElement('option');
-                    option.text = 'No se encontraron empresas asociadas';
+                    option.text = 'No se encontraron locales asociadoss';
                     select.add(option);
                 }
             })
