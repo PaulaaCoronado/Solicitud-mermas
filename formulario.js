@@ -41,8 +41,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error al cargar el archivo CSV:', error);
             });
     }
+    function enviarFormulario() {
+  var rut = document.getElementById('rut').value;
+  var empresa = document.getElementById('empresa').value;
+
+  var url = 'https://docs.google.com/spreadsheets/d/1iKShTxQueJj0HDVS1jm7v3ay4JdfY980MzqQMkNz3ds/edit#gid=1720568133'; // Reemplaza con la URL del script
+  var data = {
+    rut: rut,
+    empresa: empresa
+  };
+
+  fetch(url, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => console.log('Datos enviados correctamente'))
+  .catch(error => console.error('Error al enviar datos', error));
+}
+
 
     // Agregar evento click al botón
     document.getElementById('buscarEmpresasBtn').addEventListener('click', obtenerEmpresasAsociadas);
+    document.getElementById('enviarFormularioBtn').addEventListener('click', enviarFormulario);
 });
 
