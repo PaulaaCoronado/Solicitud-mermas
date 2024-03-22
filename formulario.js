@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Función para buscar empresas asociadas al Rut ingresado
     function obtenerEmpresasAsociadas() {
+        console.log("Encuentro las empresas");
         var rut = document.getElementById('rut').value;
         // URL del archivo CSV en tu repositorio de GitHub
         var csvUrl = 'https://raw.githubusercontent.com/PaulaaCoronado/Solicitud-mermas/main/Clientes.csv';
