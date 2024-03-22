@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function enviarFormulario() {
         console.log("Se hizo clic en el botón Enviar");
         var rut = document.getElementById('rut').value;
-        var empresa = document.getElementById('empresasAsociadas').value; // Corregido el ID del campo empresa
+        var empresa = document.getElementById('empresasAsociadas').value;
 
         var url = 'https://script.google.com/u/0/home/projects/1wqAMNGz7CrCg_J5PMb8BiPJ9lGmuN9fpL4iGkzXTCXmPdiMC9AafJyfx/edit'; // URL del script de Google Apps Script actualizada
         var data = {
