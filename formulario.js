@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function enviarFormulario() {
+        console.log("Se hizo clic en el botón Enviar");
         var rut = document.getElementById('rut').value;
         var empresa = document.getElementById('empresasAsociadas').value; // Corregido el ID del campo empresa
 
