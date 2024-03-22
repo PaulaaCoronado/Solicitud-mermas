@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var rut = document.getElementById('rut').value;
   var empresa = document.getElementById('empresa').value;
 
-  var url = 'https://docs.google.com/spreadsheets/d/1iKShTxQueJj0HDVS1jm7v3ay4JdfY980MzqQMkNz3ds/edit#gid=1720568133'; // Reemplaza con la URL del script
+  var url = 'https://script.google.com/u/0/home/projects/1wqAMNGz7CrCg_J5PMb8BiPJ9lGmuN9fpL4iGkzXTCXmPdiMC9AafJyfx/edit'; // Reemplaza con la URL del script
   var data = {
     rut: rut,
     empresa: empresa
