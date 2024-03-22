@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function obtenerEmpresasAsociadas() {
         var rut = document.getElementById('rut').value;
         // URL del archivo CSV en tu repositorio de GitHub
-        var csvUrl = 'https://raw.githubusercontent.com/PaulaaCoronado/Solicitud-mermas/main/Clientes.csv?token=GHSAT0AAAAAACP5M4GERAQ4E4VTF264MDM6ZP4LYCA';
+        var csvUrl = 'https://raw.githubusercontent.com/PaulaaCoronado/Solicitud-mermas/main/Clientes.csv';
 
         // Realizar una solicitud HTTP GET al archivo CSV
         fetch(csvUrl)
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 for (var i = 0; i < lineas.length; i++) {
                     var campos = lineas[i].split(',');
                     if (campos[0] === rut) {
-                        empresasAsociadas.push(campos[1]); // Agregar la empresa asociada al Rut a la lista
+                        empresasAsociadas.push(campos[1].trim()); // Agregar la empresa asociada al Rut a la lista
                     }
                 }
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 } else {
                     var option = document.createElement('option');
-                    option.text = 'No se encontraron locales asociadoss';
+                    option.text = 'No se encontraron locales asociados';
                     select.add(option);
                 }
             })
@@ -41,31 +41,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error al cargar el archivo CSV:', error);
             });
     }
+
     function enviarFormulario() {
-  var rut = document.getElementById('rut').value;
-  var empresa = document.getElementById('empresa').value;
+        var rut = document.getElementById('rut').value;
+        var empresa = document.getElementById('empresasAsociadas').value; // Corregido el ID del campo empresa
 
-  var url = 'https://script.google.com/u/0/home/projects/1wqAMNGz7CrCg_J5PMb8BiPJ9lGmuN9fpL4iGkzXTCXmPdiMC9AafJyfx/edit'; // Reemplaza con la URL del script
-  var data = {
-    rut: rut,
-    empresa: empresa
-  };
+        var url = 'https://script.google.com/macros/s/AKfycbwKYb76NmCocSb-SdWfUhReFrdcA0oEJFas2QP13dHA7k3cz0k/exec'; // URL del script de Google Apps Script actualizada
+        var data = {
+            rut: rut,
+            empresa: empresa
+        };
 
-  fetch(url, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => console.log('Datos enviados correctamente'))
-  .catch(error => console.error('Error al enviar datos', error));
-}
-
+        fetch(url, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => console.log('Datos enviados correctamente'))
+        .catch(error => console.error('Error al enviar datos', error));
+    }
 
     // Agregar evento click al botón
     document.getElementById('buscarEmpresasBtn').addEventListener('click', obtenerEmpresasAsociadas);
     document.getElementById('enviarFormularioBtn').addEventListener('click', enviarFormulario);
 });
-
