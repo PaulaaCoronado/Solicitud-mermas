@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var rut = document.getElementById('rut').value;
         var empresa = document.getElementById('empresasAsociadas').value;
 
-        var url = 'https://script.google.com/u/0/home/projects/1wqAMNGz7CrCg_J5PMb8BiPJ9lGmuN9fpL4iGkzXTCXmPdiMC9AafJyfx/edit'; // URL del script de Google Apps Script actualizada
+        var url = 'https://script.google.com/macros/s/AKfycbx-ln6XWEf11YjQO2gMeEWXZw3LwAOg6F6gQdipTE78CJIEGtm8ZgLCaNkv1NNbykmxcw/exec'; // URL del script
         var data = {
             rut: rut,
             empresa: empresa
